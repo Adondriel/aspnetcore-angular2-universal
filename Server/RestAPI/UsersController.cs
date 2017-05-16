@@ -5,9 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AspCoreServer.Controllers
 {
+  [Authorize]
   [Route("api/[controller]")]
   public class UsersController : Controller
   {

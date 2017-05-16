@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.NodeServices;
 using AspCoreServer.Data;
 using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.Net.Http.Server;
 
 namespace AspCoreServer
 {
@@ -22,12 +23,23 @@ namespace AspCoreServer
 
     public static void Main(string[] args)
     {
+      // FOR USING KESTREL
+      // var host = new WebHostBuilder()
+      //     .UseKestrel()
+      //     .UseContentRoot(Directory.GetCurrentDirectory())
+      //     .UseIISIntegration()
+      //     .UseStartup<Startup>()
+      //     .Build();
+
+      //FOR USING WebListener
       var host = new WebHostBuilder()
-          .UseKestrel()
-          .UseContentRoot(Directory.GetCurrentDirectory())
-          .UseIISIntegration()
-          .UseStartup<Startup>()
-          .Build();
+        .UseContentRoot(Directory.GetCurrentDirectory())
+        .UseStartup<Startup>()
+        .UseWebListener(options => 
+        {
+          options.ListenerSettings.Authentication.Schemes = AuthenticationSchemes.NTLM;
+        })
+        .Build();
 
       host.Run();
     }

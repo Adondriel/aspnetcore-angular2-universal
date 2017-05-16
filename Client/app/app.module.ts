@@ -6,8 +6,8 @@ import { FormsModule } from '@angular/forms';
 
 import { Ng2BootstrapModule, CollapseModule } from 'ngx-bootstrap';
 // i18n support
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+//import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+//import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
@@ -24,14 +24,14 @@ import { ConnectionResolver } from './shared/route.resolver';
 import { ORIGIN_URL } from './shared/constants/baseurl.constants';
 import { TransferHttpModule } from '../modules/transfer-http/transfer-http.module';
 
-export function createTranslateLoader(http: Http, baseHref) {
-    // Temporary Azure hack
-    if (baseHref === null && typeof window !== 'undefined') {
-        baseHref = window.location.origin;
-    }
-    // i18n files are in `wwwroot/assets/`
-    return new TranslateHttpLoader(http, `${baseHref}/assets/i18n/`, '.json');
-}
+// export function createTranslateLoader(http: Http, baseHref) {
+//     // Temporary Azure hack
+//     if (baseHref === null && typeof window !== 'undefined') {
+//         baseHref = window.location.origin;
+//     }
+//     // i18n files are in `wwwroot/assets/`
+//     return new TranslateHttpLoader(http, `${baseHref}/assets/i18n/`, '.json');
+// }
 
 @NgModule({
     declarations: [
@@ -53,13 +53,13 @@ export function createTranslateLoader(http: Http, baseHref) {
         TransferHttpModule, // Our Http TransferData method
 
         // i18n support
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: (createTranslateLoader),
-                deps: [Http, [ORIGIN_URL]]
-            }
-        }),
+        // TranslateModule.forRoot({
+        //     loader: {
+        //         provide: TranslateLoader,
+        //         useFactory: (createTranslateLoader),
+        //         deps: [Http, [ORIGIN_URL]]
+        //     }
+        // }),
 
         // App Routing
         RouterModule.forRoot([
@@ -142,7 +142,7 @@ export function createTranslateLoader(http: Http, baseHref) {
         LinkService,
         UserService,
         ConnectionResolver,
-        TranslateModule
+        //TranslateModule
     ]
 })
 export class AppModule {

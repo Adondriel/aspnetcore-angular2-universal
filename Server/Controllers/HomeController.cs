@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SpaServices.Prerendering;
 using Microsoft.AspNetCore.NodeServices;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +15,7 @@ namespace AspCoreServer.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var nodeServices = Request.HttpContext.RequestServices.GetRequiredService<INodeServices>();
