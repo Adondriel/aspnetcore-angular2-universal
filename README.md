@@ -221,7 +221,7 @@ Note: You could use whatever folder conventions you'd like, I prefer to split up
 ++ > ++ > /components/ 
           Here are all the regular Components that aren't "Pages" or container Components
 
-++ > ++ > /containers/
+++ > ++ > /components/
           These are the routeable or "Page / Container" Components, sometimes known as "Dumb" Components
 
 ++ > ++ > /shared/
