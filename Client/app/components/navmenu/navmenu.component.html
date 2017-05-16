@@ -1,32 +1,13 @@
 <div class="bootstrap-vertical-nav">
-  <div class="card card-block card-header">
-    <ul class="nav flex-column" id="exCollapsingNavbar3">
-      <li [routerLinkActive]="['link-active']">
-        <a class="nav-link" [routerLink]="['/home']">
-                          <span class='fa fa-home'></span> {{ 'HOME' | translate }}
-                        </a>
-      </li>
-      <li [routerLinkActive]="['link-active']">
-        <a class="nav-link" [routerLink]="['/counter']">
-                          <span class='fa fa-plus'></span> {{ 'COUNTER' | translate }}
-                        </a>
-      </li>
-      <li [routerLinkActive]="['link-active']">
-        <a class="nav-link" [routerLink]="['/users']">
-                          <span class='fa fa-user'></span> Rest API Demo
-                        </a>
-      </li>
-      <li [routerLinkActive]="['link-active']">
-        <a class="nav-link" [routerLink]="['/ngx-bootstrap']">
-                          <span class='fa fa-th-large'></span> ngx-Bootstrap demo
-                        </a>
-      </li>
-      <li [routerLinkActive]="['link-active']">
-        <a class="nav-link" [routerLink]="['/lazy']">
-          <span class='fa fa-star'></span> Lazy-loaded demo
-        </a>
-      </li>
-    </ul>
-  </div>
+    <div class="card card-block card-header">
+        <ul class="nav flex-column">
+            <li [routerLinkActive]="['link-active']">
+                <a class="nav-link" [routerLink]="['/home']"><span class='fa fa-home'></span>Home</a>
+            </li>
+            <li [routerLinkActive]="['link-active']">
+                <a class="nav-link" [routerLink]="['/staff']"><span class='fa fa-user'></span>Staff & Rate Management</a>
+            </li>
+        </ul>
+    </div>
 
 </div>

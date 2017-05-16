@@ -12,11 +12,7 @@ import { Ng2BootstrapModule, CollapseModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
-import { UsersComponent } from './components/users/users.component';
-import { UserDetailComponent } from './components/user-detail/user-detail.component';
-import { CounterComponent } from './components/counter/counter.component';
-import { ChatComponent } from './components/chat/chat.component';
-import { NgxBootstrapComponent } from './components/ngx-bootstrap-demo/ngx-bootstrap.component';
+import { StaffComponent } from './components/staff/staff.component';
 
 import { LinkService } from './shared/link.service';
 import { UserService } from './shared/user.service';
@@ -37,12 +33,8 @@ import { TransferHttpModule } from '../modules/transfer-http/transfer-http.modul
     declarations: [
         AppComponent,
         NavMenuComponent,
-        CounterComponent,
-        UsersComponent,
-        UserDetailComponent,
         HomeComponent,
-        ChatComponent,
-        NgxBootstrapComponent
+        StaffComponent
     ],
     imports: [
         CommonModule,
@@ -68,72 +60,25 @@ import { TransferHttpModule } from '../modules/transfer-http/transfer-http.modul
                 redirectTo: 'home',
                 pathMatch: 'full'
             },
-            {
-                path: 'home', component: HomeComponent,
-
                 // *** SEO Magic ***
                 // We're using "data" in our Routes to pass in our <title> <meta> <link> tag information
                 // Note: This is only happening for ROOT level Routes, you'd have to add some additional logic if you wanted this for Child level routing
                 // When you change Routes it will automatically append these to your document for you on the Server-side
                 //  - check out app.component.ts to see how it's doing this
+            {
+                path: 'home', component: HomeComponent,
                 data: {
                     title: 'Homepage',
                     meta: [{ name: 'description', content: 'This is an example Description Meta tag!' }],
-                    links: [
-                        { rel: 'canonical', href: 'http://blogs.example.com/blah/nice' },
-                        { rel: 'alternate', hreflang: 'es', href: 'http://es.example.com/' }
-                    ]
                 }
             },
             {
-                path: 'counter', component: CounterComponent,
+                path: 'staff', component: StaffComponent,
                 data: {
-                    title: 'Counter',
-                    meta: [{ name: 'description', content: 'This is an Counter page Description!' }],
-                    links: [
-                        { rel: 'canonical', href: 'http://blogs.example.com/counter/something' },
-                        { rel: 'alternate', hreflang: 'es', href: 'http://es.example.com/counter' }
-                    ]
+                    title: 'Staff & Rate Management',
+                    meta: [{ name: 'description', content: 'This is where you change staff member rates' }],
                 }
             },
-            {
-                path: 'users', component: UsersComponent,
-                data: {
-                    title: 'Users REST example',
-                    meta: [{ name: 'description', content: 'This is User REST API example page Description!' }],
-                    links: [
-                        { rel: 'canonical', href: 'http://blogs.example.com/chat/something' },
-                        { rel: 'alternate', hreflang: 'es', href: 'http://es.example.com/users' }
-                    ]
-                }
-            },
-            {
-                path: 'chat', component: ChatComponent,
-                // Wait until the resolve is finished before loading the Route
-                resolve: { connection: ConnectionResolver },
-                data: {
-                    title: 'SignalR chat example',
-                    meta: [{ name: 'description', content: 'This is an Chat page Description!' }],
-                    links: [
-                        { rel: 'canonical', href: 'http://blogs.example.com/chat/something' },
-                        { rel: 'alternate', hreflang: 'es', href: 'http://es.example.com/chat' }
-                    ]
-                }
-            },
-            {
-                path: 'ngx-bootstrap', component: NgxBootstrapComponent,
-                data: {
-                    title: 'Ngx-bootstrap demo!!',
-                    meta: [{ name: 'description', content: 'This is an Demo Bootstrap page Description!' }],
-                    links: [
-                        { rel: 'canonical', href: 'http://blogs.example.com/bootstrap/something' },
-                        { rel: 'alternate', hreflang: 'es', href: 'http://es.example.com/bootstrap-demo' }
-                    ]
-                }
-            },
-
-            { path: 'lazy', loadChildren: './components/+lazy/lazy.module#LazyModule'},
-
             // All else fails - go home!
             { path: '**', redirectTo: 'home' }
         ])
