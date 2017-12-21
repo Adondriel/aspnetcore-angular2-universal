@@ -1,7 +1,9 @@
-﻿import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_BASE_HREF } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 
 import { ORIGIN_URL } from './shared/constants/baseurl.constants';
 import { AppModuleShared } from './app.module';
@@ -29,7 +31,7 @@ export function getRequest() {
         BrowserPrebootModule.replayEvents(),
         BrowserAnimationsModule,
         BrowserTransferStateModule,
-
+        NgxChartsModule,
         // Our Common AppModule
         AppModuleShared
 

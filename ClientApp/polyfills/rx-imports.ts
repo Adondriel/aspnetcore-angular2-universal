@@ -30,4 +30,5 @@ import 'rxjs/add/observable/concat';
 
 //popper
 import 'popper.js';
+import 'd3/build/d3.js';
 

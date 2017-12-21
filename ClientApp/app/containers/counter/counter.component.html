@@ -5,3 +5,17 @@
 <p>Current count: <strong>{{ currentCount }}</strong></p>
 
 <button (click)="incrementCounter()">Increment</button>
+
+<ngx-charts-bar-vertical [view]="view"
+                         [scheme]="colorScheme"
+                         [results]="single"
+                         [gradient]="gradient"
+                         [xAxis]="showXAxis"
+                         [yAxis]="showYAxis"
+                         [legend]="showLegend"
+                         [showXAxisLabel]="showXAxisLabel"
+                         [showYAxisLabel]="showYAxisLabel"
+                         [xAxisLabel]="xAxisLabel"
+                         [yAxisLabel]="yAxisLabel"
+                         (select)="onSelect($event)">
+</ngx-charts-bar-vertical>
