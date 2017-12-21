@@ -1,4 +1,4 @@
-﻿import {
+import {
     Component, OnInit,
     // animation imports
     trigger, state, style, transition, animate, Inject
@@ -9,7 +9,7 @@ import { UserService } from '../../shared/user.service';
 @Component({
     selector: 'users',
     templateUrl: './users.component.html',
-    styleUrls: ['./users.component.css'],
+    styleUrls: ['./users.component.scss'],
     animations: [
         // Animation example
         // Triggered in the ngFor with [@flyInOut]

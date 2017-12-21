@@ -1,4 +1,4 @@
-﻿using AspCoreServer.Data;
+using AspCoreServer.Data;
 using AspCoreServer.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

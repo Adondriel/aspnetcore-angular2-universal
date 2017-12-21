@@ -3,7 +3,6 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { CommonModule, APP_BASE_HREF } from '@angular/common';
 import { HttpModule, Http } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-
 import { Ng2BootstrapModule } from 'ngx-bootstrap';
 
 // i18n support
