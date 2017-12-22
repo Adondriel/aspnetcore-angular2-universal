@@ -1,6 +1,6 @@
 # ASP.NET Core 2.0 & Angular 4 (+) advanced starter - with Server-side prerendering (for Angular SEO)!
 
-> [(upcoming) Angular 5.0 demo Branch Here](https://github.com/MarkPieszak/aspnetcore-angular2-universal/tree/angular-5.0-updates)
+> [(upcoming) Angular 5.0 demo Branch Here](https://github.com/MarkPieszak/aspnetcore-angular2-universal/tree/angular-5.0-WIP)
 
 <p align="center">
     <img src="./docs/architecture.png" alt="ASP.NET Core 2.0 Angular 4+ Starter" title="ASP.NET Core 2.0 Angular 4+ Starter">
@@ -374,7 +374,7 @@ constructor(element: ElementRef, renderer: Renderer2) {
 
 ----
  
-# FAQ - Also check out the [FAQ Issues label](https://github.com/MarkPieszak/aspnetcore-angular2-universal/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Afaq)
+# FAQ - Also check out the [!FAQ Issues label!](https://github.com/MarkPieszak/aspnetcore-angular2-universal/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Afaq) and the [!HOW-TO Issues Label!](https://github.com/MarkPieszak/aspnetcore-angular2-universal/issues?q=is%3Aissue+label%3A%22HOW+TO+-+Guide%22)
 
 ### How can I disable SSR (Server-side rendering)?
 
@@ -389,7 +389,8 @@ Check the [Gotchas](#gotchas) on how to use `isPlatformBrowser()`.
 
 ### How do I Material2 with this repo?
 
-You'll either want to remove SSR for now, or wait as support should be coming to handle platform-server rendering.
+~~You'll either want to remove SSR for now, or wait as support should be coming to handle platform-server rendering.~~
+This is now possible, with the recently updated Angular Material changes. We do not have a tutorial available for this yet.
 
 ### How can I use jQuery and/or some jQuery plugins with this repo?
 
