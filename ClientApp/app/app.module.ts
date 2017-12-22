@@ -4,6 +4,7 @@ import { CommonModule, APP_BASE_HREF } from '@angular/common';
 import { HttpModule, Http } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { Ng2BootstrapModule } from 'ngx-bootstrap';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 // i18n support
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -51,7 +52,7 @@ export function createTranslateLoader(http: Http, baseHref) {
         HttpModule,
         FormsModule,
         Ng2BootstrapModule.forRoot(), // You could also split this up if you don't want the Entire Module imported
-
+        NgxChartsModule,
         TransferHttpModule, // Our Http TransferData method
 
         // i18n support
